@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WordForm from "./WordForm";
+import WordExam from "./WordExam";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
