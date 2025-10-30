@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/eweluk.github.io/word-storm/static/css/main.f855e6bc.css",
+    "main.js": "/eweluk.github.io/word-storm/static/js/main.045a7359.js",
+    "static/js/453.d24c6f7b.chunk.js": "/eweluk.github.io/word-storm/static/js/453.d24c6f7b.chunk.js",
+    "index.html": "/eweluk.github.io/word-storm/index.html",
+    "main.f855e6bc.css.map": "/eweluk.github.io/word-storm/static/css/main.f855e6bc.css.map",
+    "main.045a7359.js.map": "/eweluk.github.io/word-storm/static/js/main.045a7359.js.map",
+    "453.d24c6f7b.chunk.js.map": "/eweluk.github.io/word-storm/static/js/453.d24c6f7b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.045a7359.js"
+  ]
+}
