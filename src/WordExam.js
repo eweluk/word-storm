@@ -154,6 +154,7 @@ function WordExam({ words, setWords }) {
     const [currentIdx, setCurrentIdx] = useState(words.length > 0 ? getRandomIndex(words.length) : null);
     const [userInput, setUserInput] = useState('');
     const [score, setScore] = useState(0);
+    const [count, setCount] = useState(0);
     const [answered, setAnswered] = useState(false);
     const [error, setError] = useState('');
     const [selectedFileName, setSelectedFileName] = useState('');
@@ -177,6 +178,7 @@ function WordExam({ words, setWords }) {
                 if (Array.isArray(loadedWords) && loadedWords.length > 0) {
                     setWords(loadedWords);
                     setScore(0);
+                    setCount(0);
                     setAnswered(false);
                     setUserInput('');
                     setError('');
@@ -197,6 +199,7 @@ function WordExam({ words, setWords }) {
         if (userInput.trim().toLowerCase() === words[currentIdx].word.trim().toLowerCase()) {
             setScore(score + 1);
         }
+        setCount(count + 1);
     };
 
     const handleNext = () => {
@@ -209,6 +212,7 @@ function WordExam({ words, setWords }) {
 
     const handleRestart = () => {
         setScore(0);
+        setCount(0);
         setAnswered(false);
         setUserInput('');
         if (words.length > 0) {
@@ -222,7 +226,9 @@ function WordExam({ words, setWords }) {
             <div style={styles.heading}>Word Exam</div>
             {/* Removed file input UI from WordExam view, as SideMenu now handles file upload */}
             {error && <div style={styles.error}>{error}</div>}
-            <div style={styles.score}>Score: <b>{score}</b></div>
+            <div style={styles.score}>
+                Score: <b>{score} / {count}{count > 0 ? `; ${Math.round((score / count) * 100)}%` : ''}</b>
+            </div>
             {words.length > 0 && currentIdx !== null && (
                 <form onSubmit={handleSubmit}>
                     <div style={styles.translation}>
