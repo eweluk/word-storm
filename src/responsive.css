@@ -1,0 +1,187 @@
+/* Responsive retro styles for both mobile and desktop */
+:root{
+  --container-max-width: 680px;
+  --gap: 16px;
+  --accent-1: #d4145a;
+  --accent-2: #fbb03b;
+  --accent-3: #2e3192;
+}
+
+.retro-container{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 24px auto;
+  padding: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--accent-3);
+}
+
+.retro-heading{
+  font-family: Impact, Charcoal, sans-serif;
+  font-weight: 700;
+  color: var(--accent-1);
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: clamp(20px, 4.5vw, 32px) !important;
+}
+
+.retro-form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.retro-input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-1);
+  background: #fff;
+  font-size: clamp(14px, 3vw, 18px) !important;
+}
+
+.retro-button{
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-3);
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: clamp(14px, 3.5vw, 18px) !important;
+}
+
+.retro-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background: #fafafa;
+  border: 2px solid var(--accent-3);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.retro-table th, .retro-table td{
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: clamp(12px, 3vw, 16px) !important;
+}
+
+.retro-table th{
+  background: linear-gradient(90deg,#a7e9f7,#f7e967);
+  font-family: Impact, Charcoal, sans-serif;
+  border-bottom: 2px solid var(--accent-3);
+}
+
+.retro-remove-btn{
+  display: inline-block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 2px solid var(--accent-3);
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color: white;
+  font-weight: 700;
+  font-size: clamp(12px,2.5vw,16px) !important;
+}
+
+.retro-file-name{
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 2px solid var(--accent-3);
+  background: #fff;
+  color: var(--accent-3);
+  font-size: clamp(12px,2.5vw,14px) !important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 8px;
+}
+
+/* Sidebar and burger */
+.retro-burger{
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(90deg,var(--accent-2),var(--accent-1));
+  border: 2px solid var(--accent-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(18px,3.5vw,28px);
+}
+
+.retro-sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 180px;
+  background: linear-gradient(135deg,#a7e9f7,#f7e967);
+  padding-top: 60px;
+  z-index: 1000;
+  border-right: 3px solid var(--accent-3);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.retro-sidebar .retro-sidebar-btn{
+  width: 90%;
+  padding: 10px 10px;
+  font-size: clamp(12px,3vw,16px) !important;
+  border-radius: 6px;
+}
+
+/* Switcher buttons */
+.retro-switcher{
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  background: linear-gradient(90deg,#f7e967,#a7e9f7);
+  border-bottom: 3px solid var(--accent-3);
+}
+
+.retro-switch-btn{
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 3px solid var(--accent-3);
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+  color: white;
+  font-weight: 700;
+  font-size: clamp(14px,3.5vw,18px);
+  min-width: 140px;
+}
+
+.retro-switch-btn.active{
+  background: linear-gradient(90deg,#a7e9f7,var(--accent-3));
+  border-color: var(--accent-1);
+}
+
+/* Responsive rules for large screens */
+@media (min-width: 1200px){
+  :root{ --container-max-width: 900px; }
+  .retro-container{ padding: 32px; }
+  .retro-sidebar{ width: 220px; }
+  .retro-burger{ width: 40px; height: 40px; }
+}
+
+@media (max-width: 700px){
+  .retro-sidebar{ width: 72px; padding-top: 72px; }
+  .retro-sidebar .retro-sidebar-btn{ font-size: 12px; padding: 12px 6px; }
+}
+
